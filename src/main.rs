@@ -2,6 +2,7 @@
 // my first attempt at a discord bot written in rust, lord save us all
 
 // imports :3
+use dotenv;
 use serenity::async_trait;
 use serenity::model::channel::Message;
 use serenity::model::gateway::Ready;
@@ -29,7 +30,8 @@ impl EventHandler for Handler {
 #[tokio::main]
 async fn main() {
     // config client with the discord bot token in the .env
-    let token = env::var("DISCORD TOKEN").expect("expected a token in the .env");
+    dotenv::dotenv().ok();
+    let token = env::var("DISCORD_TOKEN").expect("expected a token in the .env");
     // set gateway intents or big discord won't be happy
     let intents = GatewayIntents::GUILD_MESSAGES
         | GatewayIntents::DIRECT_MESSAGES
