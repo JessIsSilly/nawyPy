@@ -2,15 +2,15 @@
 // my first attempt at a discord bot written in rust, lord save us all
 
 // imports :3
-use serenity::async_trait;
-use serenity::builder::EditMessage; // Required for Serenity v0.12+
+use serenity::async_trait; // Required for Serenity v0.12+
 use serenity::model::channel::Message;
 use serenity::model::gateway::Ready;
 use serenity::prelude::*;
 use std::env;
-use std::time::Instant;
 struct Handler;
 use std::time::SystemTime;
+mod ping;
+use ping::ping;
 
 #[async_trait]
 // implementation of event handler so when message contents == something -> then something happens
@@ -19,26 +19,7 @@ impl EventHandler for Handler {
         // ping command :3
         // check if message contains ping :3
         if msg.content == ".ping" {
-            // start the timer
-            let start_time = Instant::now();
-
-            // initial message :3
-            match msg.channel_id.say(&ctx.http, "Pinging.... :3").await {
-                Ok(mut response_msg) => {
-                    // calculate the time
-                    let latency = start_time.elapsed().as_millis();
-                    let new_content = format!("Pong! Latency is **{}ms** :3", latency);
-
-                    let builder = EditMessage::new().content(new_content);
-
-                    if let Err(why) = response_msg.edit(&ctx.http, builder).await {
-                        println!("Error editing the message: {why:?}");
-                    }
-                }
-                Err(why) => {
-                    println!("Error sending message: {why:?}");
-                }
-            }
+            ping(&ctx, &msg).await;
         }
         // coinflip command :3
         if msg.content == ".coinflip" {
