@@ -15,6 +15,9 @@ And also will submit this project to hackclub stardance cuz why not :3
 - [x] meow (meows at you when you meow)
 - [x] cat (gives a random cat pic :3)
 - [x] help (lists commands(should have done earlier tbh))
+- [ ] pingr (ping remote server)
+- [ ] info (info about the bot)
+- [ ] REFACTOR INTO ACTUALLY AN ACTUALLY USABLE BOT FRAMEWORK 
 # how to run
 ```
 cargo run
