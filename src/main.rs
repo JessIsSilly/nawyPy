@@ -56,7 +56,7 @@ impl EventHandler for Handler {
 
         // automeower :3
         // meow list :p
-        let meows = vec!["meow", "nya", "mrrrp", "pr"];
+        let meows = vec!["meow", "nya", "mrrrp", "prr", "purr"];
 
         if msg.author.id == 1527332908287656036 {
         } else {
