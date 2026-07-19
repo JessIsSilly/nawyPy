@@ -2,6 +2,7 @@
 // my first attempt at a discord bot written in rust, lord save us all
 
 // imports :3
+use chrono::{self, Local};
 use serenity::async_trait;
 use serenity::builder::EditMessage; // Required for Serenity v0.12+
 use serenity::model::channel::Message;
@@ -56,7 +57,7 @@ impl EventHandler for Handler {
 
         // automeower :3
         // meow list :p
-        let meows = vec!["meow", "nya", "mrrrp", "prrr"];
+        let meows = vec!["meow", "nya", "mrrrp", "pr"];
 
         if msg.author.id == 1527332908287656036 {
         } else {
@@ -85,6 +86,12 @@ impl EventHandler for Handler {
 - meow -> bot will meow back :3",
                 )
                 .await;
+        }
+
+        if msg.content == ".time" {
+            let timenow = Local::now();
+            let timemsg = format!("The curent time is {}", timenow);
+            let _ = msg.channel_id.say(&ctx.http, timemsg).await;
         }
     }
 
