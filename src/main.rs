@@ -20,6 +20,8 @@ mod randcat;
 use randcat::cat;
 mod time;
 use time::time;
+mod info;
+use info::info;
 
 #[async_trait]
 // implementation of event handler so when message contents == something -> then something happens
@@ -42,8 +44,7 @@ impl EventHandler for Handler {
         // meow list :p
         let meows = vec!["meow", "nya", "mrrrp", "prr", "purr"];
 
-        if msg.author.id == 1527332908287656036 {
-        } else {
+        if msg.author.id != 1527332908287656036 {
             // the thing that checks if message is meowing :3
             if meows.iter().any(|e| msg.content.contains(e)) {
                 let _ = msg.channel_id.say(&ctx.http, "meow:3c").await;
@@ -60,6 +61,9 @@ impl EventHandler for Handler {
 
         if msg.content == ".time" {
             time(&ctx, &msg).await;
+        }
+        if msg.content == ".info" {
+            info(&ctx, &msg).await;
         }
     }
 

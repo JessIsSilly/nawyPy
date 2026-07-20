@@ -16,7 +16,7 @@ And also will submit this project to hackclub stardance cuz why not :3
 - [x] cat (gives a random cat pic :3)
 - [x] help (lists commands(should have done earlier tbh))
 - [ ] pingr (ping remote server)
-- [ ] info (info about the bot)
+- [x] info (info about the bot)
 - [x] REFACTOR INTO ACTUALLY AN ACTUALLY USABLE BOT FRAMEWORK 
 # how to run
 ```
