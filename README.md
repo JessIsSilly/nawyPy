@@ -31,7 +31,7 @@ List of commands :3c
 - .coinflip -> does a coinflip :3
 - .cat -> returns random picture of a cat :3
 - meow -> bot will meow back :3
-- time -> tells the current time :3
+- .time -> tells the current time :3
 
 
 # What helped me:
