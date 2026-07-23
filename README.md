@@ -1,6 +1,8 @@
 # nawyPy
 A python port of the multipurpose discord bot built in rust Nawy
 
+Bot originally made by [Energy-Owo](https://github.com/Energyboy-OwO/)
+
 # Why did i port this you may ask?
 Got bored
 
